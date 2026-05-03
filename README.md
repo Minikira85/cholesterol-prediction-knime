@@ -52,7 +52,7 @@ Correlation analysis: glucose and total cholesterol showed a weak negative corre
 
 ## Clinical interpretation
 
-The low R² is not a modelling failure — it is a clinically coherent result. Total cholesterol in an ambulatory population under active follow-up is strongly influenced by factors not captured in this dataset: dietary habits, physical activity, statin therapy, and thyroid function. In a population that has already been identified and treated, glucose is not expected to be a strong predictor of cholesterol. The combination of correlation analysis and regression modelling makes this conclusion rigorous and reproducible, which has value in applied health science independent of the metric value.
+The low R² is not a modelling failure it is a clinically coherent result. Total cholesterol in an ambulatory population under active follow-up is strongly influenced by factors not captured in this dataset: dietary habits, physical activity, statin therapy, and thyroid function. In a population that has already been identified and treated, glucose is not expected to be a strong predictor of cholesterol. The combination of correlation analysis and regression modelling makes this conclusion rigorous and reproducible, which has value in applied health science independent of the metric value.
 
 ---
 
