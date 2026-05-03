@@ -21,6 +21,7 @@ Patient identifiers and personal data have been fully removed from all outputs. 
 ---
 
 ## Workflow
+![KNIME workflow canvas](https://github.com/user-attachments/assets/95842851-acb3-456c-9b98-08a38a6ca7f1)
 
 The KNIME workflow consists of 6 nodes:
 
@@ -38,6 +39,7 @@ Workflow screenshots are included in the `workflow_screenshots/` folder.
 ---
 
 ## Results
+![Numeric Scorer results](https://github.com/user-attachments/assets/b8f13ba9-6d30-4538-a57d-bc19adfee532)
 
 | Metric | Value |
 |---|---|
@@ -47,6 +49,7 @@ Workflow screenshots are included in the `workflow_screenshots/` folder.
 | MAE | 33.45 mg/dL |
 
 Correlation analysis: glucose and total cholesterol showed a weak negative correlation (r = −0.095, p = 0.004). Age correlated moderately with glucose (r = 0.249) but minimally with cholesterol (r = 0.043).
+![Correlation matrix](https://github.com/user-attachments/assets/7c2e80f3-9583-469c-9021-35138d1584ef)
 
 ---
 
