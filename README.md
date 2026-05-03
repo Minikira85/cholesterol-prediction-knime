@@ -1,8 +1,8 @@
-# Predicting Total Cholesterol from Clinical Lab Data — KNIME Regression Workflow
+# Predicting Total Cholesterol from Clinical Lab Data - KNIME Regression Workflow
 
-Can glucose, age, and sex predict total cholesterol in an ambulatory population? This project builds and evaluates a linear regression model in KNIME using real clinical laboratory data to answer that question — and finds that the answer, while statistically modest, is clinically informative.
+Can glucose, age, and sex predict total cholesterol in an ambulatory population? This project builds and evaluates a linear regression model in KNIME using real clinical laboratory data to answer that question and finds that the answer, while statistically modest, is clinically informative.
 
-**Context:** Microcredential in AI & Big Data in Health — UAB / Hospital Parc Taulí, 2026
+**Context:** Microcredential in AI & Big Data in Health UAB / Hospital Parc Taulí, 2026
 
 ---
 
