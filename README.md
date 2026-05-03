@@ -21,7 +21,7 @@ Patient identifiers and personal data have been fully removed from all outputs. 
 ---
 
 ## Workflow
-![KNIME workflow canvas](https://github.com/user-attachments/assets/95842851-acb3-456c-9b98-08a38a6ca7f1)
+![KNIME workflow canvas](https://github.com/user-attachments/assets/7c2e80f3-9583-469c-9021-35138d1584ef)
 
 The KNIME workflow consists of 6 nodes:
 
