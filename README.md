@@ -1,8 +1,8 @@
-# Predicting Total Cholesterol from Clinical Lab Data - KNIME Regression Workflow
+# Predicting Total Cholesterol from Clinical Lab Data — KNIME Regression Workflow
 
-Can glucose, age, and sex predict total cholesterol in an ambulatory population? This project builds and evaluates a linear regression model in KNIME using real clinical laboratory data to answer that question and finds that the answer, while statistically modest, is clinically informative.
+Can glucose, age, and sex predict total cholesterol in an ambulatory population? This project builds and evaluates a linear regression model in KNIME using real clinical laboratory data to answer that question — and finds that the answer, while statistically modest, is clinically informative.
 
-**Context:** Microcredential in AI & Big Data in Health UAB / Hospital Parc Taulí, 2026
+**Context:** Microcredential in AI & Big Data in Health — UAB / Hospital Parc Taulí, 2026
 
 ---
 
@@ -21,47 +21,58 @@ Patient identifiers and personal data have been fully removed from all outputs. 
 ---
 
 ## Workflow
-![KNIME workflow canvas](https://github.com/user-attachments/assets/b8f13ba9-6d30-4538-a57d-bc19adfee532)
 
-The KNIME workflow consists of 6 nodes:
+The KNIME workflow consists of 7 nodes:
+
+![KNIME workflow canvas](https://github.com/user-attachments/assets/b8f13ba9-6d30-4538-a57d-bc19adfee532)
 
 | Node | Purpose |
 |---|---|
 | CSV Reader | Loads 933 patient records (19 columns) |
 | Column Filter | Selects the 4 relevant variables, removes identifiers and duplicates from dataset merge |
-| Linear Correlation | Computes pairwise correlations between numeric variables |
+| Linear Correlation | Computes pairwise correlations between numeric variables (parallel branch) |
 | Table Partitioner | 70/30 train/test split, stratified by sex, fixed random seed for reproducibility |
 | Linear Regression Learner | Trains the model on the training partition |
+| Regression Predictor | Applies the model to the test partition |
 | Numeric Scorer | Evaluates predictions against ground truth (R², MAE, RMSE, MSE, adjusted R²) |
-
-Workflow screenshots are included in the `workflow_screenshots/` folder.
 
 ---
 
 ## Results
-![Numeric Scorer results](https://github.com/user-attachments/assets/95842851-acb3-456c-9b98-08a38a6ca7f1)
 
 | Metric | Value |
 |---|---|
 | R² | 0.024 |
 | Adjusted R² | 0.024 |
+| MAE | 33.42 mg/dL |
+| MSE | 1,247.61 |
 | RMSE | 42.98 mg/dL |
-| MAE | 33.45 mg/dL |
+| Mean signed difference | 2.11 |
+| Mean absolute percentage error | 9.21% |
+
+![Numeric Scorer results](https://github.com/user-attachments/assets/95842851-acb3-456c-9b98-08a38a6ca7f1)
+
+![Correlation matrix](https://github.com/user-attachments/assets/7c2e80f3-9583-469c-9021-35138d1584ef)
 
 Correlation analysis: glucose and total cholesterol showed a weak negative correlation (r = −0.095, p = 0.004). Age correlated moderately with glucose (r = 0.249) but minimally with cholesterol (r = 0.043).
-![Correlation matrix](https://github.com/user-attachments/assets/7c2e80f3-9583-469c-9021-35138d1584ef)
 
 ---
 
 ## Clinical interpretation
 
-The low R² is not a modelling failure it is a clinically coherent result. Total cholesterol in an ambulatory population under active follow-up is strongly influenced by factors not captured in this dataset: dietary habits, physical activity, statin therapy, and thyroid function. In a population that has already been identified and treated, glucose is not expected to be a strong predictor of cholesterol. The combination of correlation analysis and regression modelling makes this conclusion rigorous and reproducible, which has value in applied health science independent of the metric value.
+The low R² is not a modelling failure — it is a clinically coherent result. Total cholesterol in an ambulatory population under active follow-up is strongly influenced by factors not captured in this dataset: dietary habits, physical activity, statin therapy, and thyroid function. In a population that has already been identified and treated, glucose is not expected to be a strong predictor of cholesterol. The combination of correlation analysis and regression modelling makes this conclusion rigorous and reproducible, which has value in applied health science independent of the metric value.
 
 ---
 
 ## Stack
 
 `KNIME Analytics Platform` · `Linear Regression` · `Linear Correlation` · `CSV` · `Clinical laboratory data`
+
+---
+
+## Next steps
+
+Comparing performance against non-linear models (Random Forest, k-NN regression) would allow a more complete evaluation of whether the low variance explained reflects a genuine absence of linear relationship or a limitation of the model family.
 
 ---
 
